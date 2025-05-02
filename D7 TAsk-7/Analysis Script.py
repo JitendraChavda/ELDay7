@@ -47,9 +47,19 @@ print(df_product_summary)
 
 
 
-#total revenue per product
-ax = df_product_summary.plot(kind='bar', x='product', y='revenue', legend=False)
+# #Bar_Chart total revenue per product
+# ax = df_product_summary.plot(kind='bar', x='product', y='revenue', legend=False)
+# ax.set_ylabel('Revenue')
+# ax.set_title('Total Revenue per Product')
+# plt.savefig("sales_revenue_chart.png")
+# plt.show()
+
+
+#Line chart of revenue per product
+ax = df_product_summary.plot(kind='line', x='product', y='revenue', marker='o')
 ax.set_ylabel('Revenue')
-ax.set_title('Total Revenue per Product')
-plt.savefig("sales_revenue_chart.png")
+ax.set_xlabel('Product')
+ax.set_title('Revenue per Product (Line Chart)')
+plt.tight_layout()
+plt.savefig("sales_revenue_line_chart.png")
 plt.show()
